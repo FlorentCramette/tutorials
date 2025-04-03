@@ -9,6 +9,9 @@
     'website': "http://www.votresite.com",
     'category': 'Real Estate',
     'version': '0.1',
-    'depends': ['base'],  # Le seul module framework nécessaire pour l'instant.
-    'application': True,  # Pour que le module apparaisse dans le filtre « Applications »
+    'data': [
+        'security/ir.model.access.csv',
+    ],
+    'application': True,
+    'license': 'LGPL-3',
 }
