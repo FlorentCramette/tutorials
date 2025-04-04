@@ -53,15 +53,16 @@
         <search string="Rechercher une Propriété">
             <field name="name"/>
             <field name="postcode"/>
-            <!-- Filtre pour les propriétés disponibles. Ici, on utilise un tuple pour les valeurs -->
-            <filter string="Disponibles" domain="[('state', 'in', ('new', 'offer_received'))]"/>
+            <!-- Filtre pour les propriétés disponibles : utiliser une liste pour le domaine -->
+            <filter string="Disponibles" domain="[('state','in', ['new', 'offer_received'])]"/>
             <!-- Groupe de regroupement par code postal -->
             <group expand="0" string="Group By">
-                <filter name="group_by_postcode" string="Code Postal" context="{'group_by': 'postcode'}"/>
+                <filter name="group_by_postcode" string="Code Postal" context="{'group_by':'postcode'}"/>
             </group>
         </search>
     </field>
 </record>
+
 
 
 
