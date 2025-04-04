@@ -28,13 +28,11 @@
         <form string="Propriété">
             <sheet>
                 <group>
-                    <group col="3">
-                        <field name="name"/>
+                    <group>
                         <field name="postcode"/>
-                        <field name="state"/>
-                    </group>
-                    <group col="3">
                         <field name="date_availability" options="{'datepicker': {'min_date': 'today'}}"/>
+                    </group>
+                    <group>
                         <field name="expected_price"/>
                         <field name="selling_price"/>
                     </group>
