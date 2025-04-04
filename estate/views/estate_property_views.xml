@@ -1,9 +1,96 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!-- Vue liste personnalisée -->
+    <record id="estate_property_view_list" model="ir.ui.view">
+        <field name="name">estate.property.list</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="postcode"/>
+                <field name="bedrooms"/>
+                <field name="living_area"/>
+                <field name="expected_price"/>
+                <field name="selling_price"/>
+                <field name="date_availability"/>
+                <field name="state"/>
+            </tree>
+        </field>
+        <field name="type">list</field>  <!-- Ajout explicite du type list -->
+    </record>
+
+    <!-- Vue formulaire personnalisée -->
+    <record id="estate_property_view_form" model="ir.ui.view">
+        <field name="name">estate.property.form</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="postcode"/>
+                            <field name="date_availability"/>
+                            <field name="expected_price"/>
+                            <field name="selling_price"/>
+                            <field name="state"/>
+                        </group>
+                        <group>
+                            <field name="bedrooms"/>
+                            <field name="living_area"/>
+                            <field name="facades"/>
+                            <field name="garage"/>
+                            <field name="garden"/>
+                            <field name="garden_area" attrs="{'invisible': [('garden', '=', False)]}"/>
+                            <field name="garden_orientation" attrs="{'invisible': [('garden', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vue recherche personnalisée -->
+    <record id="estate_property_view_search" model="ir.ui.view">
+        <field name="name">estate.property.search</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- Champs de recherche -->
+                <field name="name"/>
+                <field name="postcode"/>
+                <field name="expected_price"/>
+                <field name="bedrooms"/>
+                <field name="living_area"/>
+                <field name="facades"/>
+                
+                <!-- Filtres -->
+                <filter string="Available" name="available" domain="[('state', 'in', ['new', 'offer_received'])]"/>
+                
+                <!-- Regroupement -->
+                <group expand="1" string="Group By">
+                    <filter string="Postcode" name="postcode" context="{'group_by': 'postcode'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
     <!-- Action window for estate.property -->
     <record id="estate_property_action" model="ir.actions.act_window">
         <field name="name">Properties</field>
         <field name="res_model">estate.property</field>
-        <field name="view_mode">list,form</field>  <!-- Changé "tree" en "list" -->
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_available': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first property!
+            </p>
+        </field>
     </record>
 </odoo>
