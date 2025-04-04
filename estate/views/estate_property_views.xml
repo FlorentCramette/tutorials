@@ -1,0 +1,8 @@
+<odoo>
+  <!-- Déclaration de l'action liée au modèle estate.property -->
+  <record id="estate_property_action" model="ir.actions.act_window">
+    <field name="name">Propriétés</field>
+    <field name="res_model">estate.property</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+</odoo>
