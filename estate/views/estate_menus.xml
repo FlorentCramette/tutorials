@@ -1,11 +1,11 @@
 <odoo>
-  <!-- Menu racine qui apparaîtra dans le sélecteur d'applications -->
-  <menuitem id="estate_menu_root" name="Estate"/>
+  <!-- Menu racine (visible dans le sélecteur d'applications) -->
+  <menuitem id="menu_estate_root" name="Estate" sequence="10"/>
   
   <!-- Menu de premier niveau -->
-  <menuitem id="estate_menu_first_level" name="Immobilier" parent="estate_menu_root"/>
+  <menuitem id="menu_estate_first" name="Immobilier" parent="menu_estate_root" sequence="10"/>
   
-  <!-- Menu d'action lié à l'action précédemment créée -->
-  <menuitem id="estate_menu_properties" name="Propriétés" parent="estate_menu_first_level"
-            action="estate_property_action"/>
+  <!-- Menu d'action lié à l'action qui affiche vos vues -->
+  <menuitem id="menu_estate_properties" name="Propriétés" parent="menu_estate_first"
+            action="estate_property_action" sequence="10"/>
 </odoo>
