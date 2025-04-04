@@ -1,15 +1,15 @@
 <odoo>
   <!-- Vue liste pour le modèle estate.property -->
   <record id="view_estate_property_tree" model="ir.ui.view">
-    <field name="name">estate.property.tree</field>
+    <field name="name">estate.property.list</field>
     <field name="model">estate.property</field>
     <field name="type">list</field>
     <field name="arch" type="xml">
-      <tree string="Liste des Propriétés">
+      <list string="Liste des Propriétés">
         <field name="name"/>
         <field name="expected_price"/>
         <field name="selling_price"/>
-      </tree>
+      </list>
     </field>
   </record>
 
