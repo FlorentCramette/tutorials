@@ -27,7 +27,7 @@
     <field name="arch" type="xml">
         <form string="Propriété">
             <sheet>
-                <div class="o_form_label" style="font-weight: bold; font-size: 16px;">My new house</div>
+                <div class="o_form_label" style="font-weight: bold; font-size: 26px;">My new house</div>
                 <group>
                     <group>
                         <field name="postcode"/>
