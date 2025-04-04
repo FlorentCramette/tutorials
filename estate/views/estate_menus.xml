@@ -1,11 +1,11 @@
 <odoo>
-  <!-- Menu racine (visible dans le sélecteur d'applications) -->
-  <menuitem id="menu_estate_root" name="Estate" sequence="10"/>
+  <!-- Menu racine avec une action pour ouvrir directement la vue -->
+  <menuitem id="menu_estate_root" name="Estate" action="estate_property_action" sequence="10"/>
   
-  <!-- Menu de premier niveau -->
+  <!-- Menu de premier niveau (optionnel si le menu racine ouvre directement la vue) -->
   <menuitem id="menu_estate_first" name="Immobilier" parent="menu_estate_root" sequence="10"/>
   
-  <!-- Menu d'action lié à l'action qui affiche vos vues -->
+  <!-- Menu d'action lié à l'action qui affiche vos vues (redondant si le menu racine a déjà l'action) -->
   <menuitem id="menu_estate_properties" name="Propriétés" parent="menu_estate_first"
             action="estate_property_action" sequence="10"/>
 </odoo>
