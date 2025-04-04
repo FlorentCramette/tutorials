@@ -27,16 +27,18 @@
     <field name="arch" type="xml">
         <form string="Propriété">
             <sheet>
-                <group col="3">
-                    <field name="name"/>
-                    <field name="postcode"/>
-                    <field name="state"/>
-                </group>
-                <group col="3">
-                    <field name="date_availability" options="{'datepicker': {'min_date': 'today'}}"/>
-                    <field name="expected_price"/>
-                    <field name="selling_price"/>
-                </group>
+                <group>
+                    <group col="3">
+                        <field name="name"/>
+                        <field name="postcode"/>
+                        <field name="state"/>
+                    </group>
+                    <group col="3">
+                        <field name="date_availability" options="{'datepicker': {'min_date': 'today'}}"/>
+                        <field name="expected_price"/>
+                        <field name="selling_price"/>
+                    </group>
+                 </group>   
                 <notebook>
                     <page string="Description">
                         <group>
