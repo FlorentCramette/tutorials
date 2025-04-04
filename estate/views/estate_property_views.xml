@@ -44,8 +44,12 @@
                             <field name="facades"/>
                             <field name="garage"/>
                             <field name="garden"/>
-                            <field name="garden_area" attrs="{'invisible': [('garden', '=', False)]}"/>
-                            <field name="garden_orientation" attrs="{'invisible': [('garden', '=', False)]}"/>
+                            <field name="garden_area">
+                                <attribute name="invisible">[('garden', '=', False)]</attribute>
+                            </field>
+                            <field name="garden_orientation">
+                                <attribute name="invisible">[('garden', '=', False)]</attribute>
+                            </field>
                         </group>
                     </group>
                     <notebook>
