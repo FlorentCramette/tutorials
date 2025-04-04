@@ -1,9 +1,9 @@
 <odoo>
-  <!-- Vue tree pour le modèle estate.property -->
+  <!-- Vue liste pour le modèle estate.property -->
   <record id="view_estate_property_tree" model="ir.ui.view">
     <field name="name">estate.property.tree</field>
     <field name="model">estate.property</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
     <field name="arch" type="xml">
       <tree string="Liste des Propriétés">
         <field name="name"/>
@@ -13,7 +13,7 @@
     </field>
   </record>
 
-  <!-- Vue form pour le modèle estate.property -->
+  <!-- Vue formulaire pour le modèle estate.property -->
   <record id="view_estate_property_form" model="ir.ui.view">
     <field name="name">estate.property.form</field>
     <field name="model">estate.property</field>
@@ -39,8 +39,7 @@
   <record id="estate_property_action" model="ir.actions.act_window">
     <field name="name">Propriétés</field>
     <field name="res_model">estate.property</field>
-    <field name="view_mode">tree,form</field>
-    <!-- Optionnel : vous pouvez préciser la vue par défaut -->
+    <field name="view_mode">list,form</field>
     <field name="view_id" ref="view_estate_property_tree"/>
   </record>
 </odoo>
