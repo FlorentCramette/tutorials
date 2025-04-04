@@ -31,14 +31,12 @@
                     <group>
                         <field name="name"/>
                         <field name="postcode"/>
-                    </group>
-                    <group>
-                        <field name="expected_price"/>
-                        <field name="selling_price"/>
+                        <field name="state"/>
                     </group>
                     <group>
                         <field name="date_availability" options="{'datepicker': {'min_date': 'today'}}"/>
-                        <field name="state"/>
+                        <field name="expected_price"/>
+                        <field name="selling_price"/>
                     </group>
                 </group>
                 <notebook>
