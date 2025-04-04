@@ -1,8 +1,44 @@
 <odoo>
-  <!-- Déclaration de l'action liée au modèle estate.property -->
+  <!-- Vue tree pour le modèle estate.property -->
+  <record id="view_estate_property_tree" model="ir.ui.view">
+    <field name="name">estate.property.tree</field>
+    <field name="model">estate.property</field>
+    <field name="arch" type="xml">
+      <tree string="Liste des Propriétés">
+        <field name="name"/>
+        <field name="expected_price"/>
+        <field name="selling_price"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- Vue form pour le modèle estate.property -->
+  <record id="view_estate_property_form" model="ir.ui.view">
+    <field name="name">estate.property.form</field>
+    <field name="model">estate.property</field>
+    <field name="arch" type="xml">
+      <form string="Propriété">
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="expected_price"/>
+            <field name="selling_price"/>
+          </group>
+          <group>
+            <field name="description"/>
+            <field name="postcode"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Action liant les vues au modèle estate.property -->
   <record id="estate_property_action" model="ir.actions.act_window">
     <field name="name">Propriétés</field>
     <field name="res_model">estate.property</field>
     <field name="view_mode">tree,form</field>
+    <!-- Vous pouvez préciser les vues à utiliser si besoin -->
+    <field name="view_id" ref="view_estate_property_tree"/>
   </record>
 </odoo>
