@@ -20,47 +20,45 @@
     </record>
 
     <!-- Vue formulaire personnalisée -->
-    <record id="estate_property_view_form" model="ir.ui.view">
-        <field name="name">estate.property.form</field>
-        <field name="model">estate.property</field>
-        <field name="type">form</field>
-        <field name="arch" type="xml">
-            <form string="Propriété">
-                <sheet>
-                    <h1>
-                        <field name="name"/>
-                    </h1>
+<record id="estate_property_view_form" model="ir.ui.view">
+    <field name="name">estate.property.form</field>
+    <field name="model">estate.property</field>
+    <field name="type">form</field>
+    <field name="arch" type="xml">
+        <form string="Propriété">
+            <sheet>
+                <group>
                     <group>
+                        <!-- Champs que vous souhaitez afficher en dehors de l'onglet Description -->
+                        <field name="name"/>
+                        <field name="postcode"/>
+                        <field name="date_availability"/>
+                        <field name="expected_price"/>
+                        <field name="selling_price"/>
+                        <field name="state"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page string="Description">
                         <group>
-                            <field name="postcode"/>
-                            <field name="date_availability"/>
-                            <field name="expected_price"/>
-                            <field name="selling_price"/>
-                            <field name="state"/>
-                        </group>
-                        <group>
+                            <!-- Champs qui apparaîtront dans l'onglet "Description" -->
+                            <field name="description"/>
                             <field name="bedrooms"/>
                             <field name="living_area"/>
                             <field name="facades"/>
                             <field name="garage"/>
                             <field name="garden"/>
-                            <field name="garden_area">
-                                <attribute name="invisible">[('garden', '=', False)]</attribute>
-                            </field>
-                            <field name="garden_orientation">
-                                <attribute name="invisible">[('garden', '=', False)]</attribute>
-                            </field>
+                            <!-- Invisibility conditionnelle si garden = False -->
+                            <field name="garden_area" attrs="{'invisible': [('garden', '=', False)]}"/>
+                            <field name="garden_orientation" attrs="{'invisible': [('garden', '=', False)]}"/>
                         </group>
-                    </group>
-                    <notebook>
-                        <page string="Description">
-                            <field name="description"/>
-                        </page>
-                    </notebook>
-                </sheet>
-            </form>
-        </field>
-    </record>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
 
     <!-- Vue recherche personnalisée -->
     <record id="estate_property_view_search" model="ir.ui.view">
