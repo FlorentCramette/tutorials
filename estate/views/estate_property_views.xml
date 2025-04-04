@@ -3,6 +3,7 @@
   <record id="view_estate_property_tree" model="ir.ui.view">
     <field name="name">estate.property.tree</field>
     <field name="model">estate.property</field>
+    <field name="type">tree</field>
     <field name="arch" type="xml">
       <tree string="Liste des Propriétés">
         <field name="name"/>
@@ -16,6 +17,7 @@
   <record id="view_estate_property_form" model="ir.ui.view">
     <field name="name">estate.property.form</field>
     <field name="model">estate.property</field>
+    <field name="type">form</field>
     <field name="arch" type="xml">
       <form string="Propriété">
         <sheet>
@@ -38,7 +40,7 @@
     <field name="name">Propriétés</field>
     <field name="res_model">estate.property</field>
     <field name="view_mode">tree,form</field>
-    <!-- Vous pouvez préciser les vues à utiliser si besoin -->
+    <!-- Optionnel : vous pouvez préciser la vue par défaut -->
     <field name="view_id" ref="view_estate_property_tree"/>
   </record>
 </odoo>
